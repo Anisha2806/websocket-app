@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Client</title>
+</head>
+<body>
+    <h1>WebSocket Client</h1>
+    <div id="output"></div>
+    <script>
+        const ws = new WebSocket("ws://localhost:8000/ws");
+        ws.onmessage = function(event) {
+            const output = document.getElementById("output");
+            output.innerHTML += `<p>${event.data}</p>`;
+        };
+    </script>
+</body>
+</html>
